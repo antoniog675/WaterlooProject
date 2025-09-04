@@ -24,7 +24,8 @@ namespace WaterlooProject.Services
             queryPositionsAndCount = GetPositionsAndCount(clientResponse);
             queryPositionsAndCount.Query = query;
 
-            _logger.LogInformation("InfoTrack has been found in positions {0}, for a total of {1} many times", queryPositionsAndCount.Positions, queryPositionsAndCount.Count);
+            _logger.LogInformation("The query {0} has been found in positions {1}, for a total of {2} many times", 
+                queryPositionsAndCount.Query, queryPositionsAndCount.Positions, queryPositionsAndCount.Count);
 
             return queryPositionsAndCount;
         }

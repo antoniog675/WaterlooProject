@@ -18,7 +18,7 @@ namespace WaterlooProject.Client
         }
         public async Task<SearchResponse> SearchAsyc(string query)
         {
-            _logger.LogInformation("In the client, making request to google");
+            _logger.LogInformation("In the client, making request to SerpAPI");
 
             var apiKey = _config["SerpApi:ApiKey"];
             var url = String.Format(_config["SerpApi:SerpApiURL"], query, apiKey);

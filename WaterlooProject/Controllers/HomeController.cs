@@ -31,6 +31,7 @@ namespace WaterlooProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Search(string query)
         {
+            _logger.LogInformation("At the controller method search");
             var results = await _searchService.SearchAsyc(query); // Service call
             return View("Search", results);
         }
