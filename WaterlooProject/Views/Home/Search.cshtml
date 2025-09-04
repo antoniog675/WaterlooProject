@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Search";
+    @model QueryPositionsAndCount;
+}
+
+
+<form class="text-center" asp-action="Search" method="post">
+    <h1>Search</h1>
+    <input type="text" name="query" placeholder="Enter your search term" />
+    <button type="submit">Search</button>
+</form>
+
+
+@if (Model != null)
+{
+    <div class="text-center">
+        <h2>Results</h2>
+        <p>The query <b>@Model.Query</b> has been found a total of <b>@Model.Count</b> times in positions @string.Join(", ", Model.Positions)</p>
+    </div>
+
+    <form class="text-center" asp-action="Search" method="get">
+        <button type="submit">New Search</button>
+    </form>
+
+}
+
+
