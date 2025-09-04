@@ -3,12 +3,14 @@
     @model QueryPositionsAndCount;
 }
 
-
-<form class="text-center" asp-action="Search" method="post">
-    <h1>Search</h1>
-    <input type="text" name="query" placeholder="Enter your search term" />
-    <button type="submit">Search</button>
-</form>
+@if (Model == null)
+{
+    <form class="text-center" asp-action="Search" method="post">
+        <h1>Search</h1>
+        <input type="text" name="query" placeholder="Enter your search term" />
+        <button type="submit">Search</button>
+    </form>
+}
 
 
 @if (Model != null)
